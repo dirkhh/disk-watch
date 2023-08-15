@@ -1,0 +1,10 @@
+[Unit]
+Description=disk space watcher timer
+Requires=disk-watch.service
+
+[Timer]
+Unit=disk-watch.service
+OnCalendar=*-*-* *:00:00
+
+[Install]
+WantedBy=timers.target

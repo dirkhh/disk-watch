@@ -1,0 +1,12 @@
+[Unit]
+Description=disk space watcher
+Wants=disk-watch.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /opt/disk-watch/run.sh
+WorkingDirectory=/opt/disk-watch
+SyslogIdentifier=[disk-watch]
+
+[Install]
+WantedBy=multi-user.target
